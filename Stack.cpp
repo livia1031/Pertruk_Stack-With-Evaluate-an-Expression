@@ -4,7 +4,7 @@
 // Livia Ayu Istoria H 1817051031
 // Mutiara Widdi A 1817051047
 
-//livia ayu 1817051031
+//Atika Istiqomah 1817051004
 #include <iostream>
 using namespace std;
 struct stack{
