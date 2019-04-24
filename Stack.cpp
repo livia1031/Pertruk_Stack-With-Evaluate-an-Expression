@@ -7,10 +7,12 @@
 //Atika Istiqomah 1817051004
 #include <iostream>
 using namespace std;
-struct stack{
+struct stack
+{
   char top= -1;
   char data[10];
-  void push(int p){
+  void push(int p)
+  {
     data[top++]=p;
   }
   int atas(){
@@ -39,4 +41,46 @@ struct stack{
                 }
                 data[++top]=p;
               }
-              
+  
+  //Anisa Raden 1817051007
+  void cetak ()
+  {
+    for (int i=0; i<top; i++)
+     {
+        cout<<data[i];
+     }
+  }
+};
+
+int Operator (char p)
+{
+  if (p=='^')
+  return 3;
+  else if (p=='*' || p=='/')
+  teturn 2;
+  else if (p=='+' || p=='-')
+  return 1;
+  else return -1;
+}
+
+int main ()
+{
+  int hasil,p;
+  string b,c;
+  char opr;
+  stack d;
+  cout<<"Masukkan Ekspresi Infix : ";
+  cin>>b;
+  cout<<endl;
+  
+  p=b.lenght();
+  for (int i=0; i<p; i++)
+  {
+    if (b[i] >= '0' && b[i] <= '9')
+    {
+      c+=b[i];
+    }
+    else if (b[i] == '(')
+    {
+      d.push(b[i]);
+    }
