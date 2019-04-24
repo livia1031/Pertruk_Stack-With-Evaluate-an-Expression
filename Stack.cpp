@@ -84,3 +84,41 @@ int main ()
     {
       d.push(b[i]);
     }
+    
+    //Livia Ayu Istoria Hernani 1817051031
+    
+    else if (b[i] == ')') {
+       while (d.kosong() != 1 && d.atas() != '(') {
+         char x=d.atas();
+         d.pop();
+         c+=x;
+       }
+    if (d.atas() == '(') {
+        d.pop();
+        }
+    }
+    if (b[i] == '+' || b[i] == '-' || b[i] == '*' || b[i] == '/') {
+        if  (d.kosong() == 1 ||d.atas()  == '(') {
+            d.push(b[i]);
+        }
+    else {
+        while (d.kosong() != 1 && d.atas() != '(' && Operator(b[i]) <= Operator(d.atas())) {
+            char x=d.atas();
+            d.pop();
+            c+=x;
+        }
+        d.push(b[i]);
+        }
+    }
+  }
+  while (d.kosong() != 1) {
+      char x=d.atas();
+      d.pop();
+      c+=x;
+    }
+  
+  cout<<"Bentuk Postfix \t: "<<c<<endl<<endl;
+  for(int i=0;i<=p;i++) {
+      if (c[i] >= '0' && c[i] <= '9') {
+        d.push(c[i]);
+      }
